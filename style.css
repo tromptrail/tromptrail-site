@@ -1,0 +1,156 @@
+/* TrompTrail LLC site. Forest greens from the TrompMiles icon, light and dark. */
+:root {
+  --bg: #f6f7f4;
+  --surface: #ffffff;
+  --ink: #17221d;
+  --muted: #55665d;
+  --line: #dde4df;
+  --green: #1f6a4e;
+  --green-deep: #0e3b2c;
+  --amber: #c98714;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "Source Sans 3", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1713;
+    --surface: #14211b;
+    --ink: #e8efe9;
+    --muted: #a3b5ab;
+    --line: #26362e;
+    --green: #6cc39c;
+    --green-deep: #0b2c21;
+    --amber: #e8a83a;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 18px/1.6 var(--body);
+}
+a { color: var(--green); text-underline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; border-radius: 3px; }
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+
+/* Header band */
+.top {
+  background: var(--green-deep);
+  color: #f1e9d5;
+}
+.top .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-block: 18px;
+}
+.brand {
+  font: 600 22px/1 var(--display);
+  color: #f1e9d5;
+  text-decoration: none;
+  letter-spacing: .01em;
+}
+.top nav { display: flex; gap: 20px; flex-wrap: wrap; }
+.top nav a { color: #cfe3d8; text-decoration: none; font-size: 16px; }
+.top nav a:hover, .top nav a[aria-current="page"] { color: #f6c45c; }
+
+main .wrap { padding-block: 48px 64px; }
+
+h1, h2, h3 { font-family: var(--display); line-height: 1.15; text-wrap: balance; }
+h1 { font-size: clamp(34px, 6vw, 48px); margin: 0 0 12px; font-weight: 600; }
+h2 { font-size: 26px; margin: 44px 0 10px; font-weight: 600; }
+h3 { font-size: 20px; margin: 28px 0 6px; font-weight: 600; }
+p, li { max-width: 65ch; }
+.lede { font-size: 21px; color: var(--muted); margin-top: 0; }
+.eyebrow {
+  font: 600 13px/1 var(--body);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin: 0 0 14px;
+}
+
+/* App feature block on the home page */
+.app {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 24px;
+  align-items: start;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 24px;
+  margin-top: 36px;
+}
+.app img { width: 112px; height: 112px; border-radius: 25px; display: block; }
+.app h2 { margin-top: 0; }
+.app > div { min-width: 0; }
+@media (max-width: 520px) {
+  .app { grid-template-columns: 1fr; }
+}
+.badge {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+ul.points { padding-left: 1.2em; }
+ul.points li { margin-bottom: 6px; }
+
+/* Support FAQ */
+details {
+  border-top: 1px solid var(--line);
+  padding: 14px 0;
+}
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 19px;
+  list-style-position: outside;
+}
+details p, details ol, details ul { color: var(--ink); }
+.contact {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin: 28px 0;
+}
+.contact strong { font-size: 20px; }
+.note { color: var(--muted); font-size: 16px; }
+
+/* Privacy policy */
+.policy h2 { font-size: 22px; }
+.updated { color: var(--muted); font-size: 16px; margin-top: 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  margin: 12px 0 8px;
+}
+.table-scroll { overflow-x: auto; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-weight: 600; color: var(--muted); font-size: 14px; letter-spacing: .04em; text-transform: uppercase; }
+
+footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 15px;
+}
+footer .wrap { padding-block: 24px 36px; display: flex; gap: 16px; flex-wrap: wrap; justify-content: space-between; }
